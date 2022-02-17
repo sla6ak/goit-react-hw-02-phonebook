@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+import s from './Forma.module.css';
 
 class Forma extends React.Component {
   state = { name: '', number: '' };
@@ -8,27 +9,27 @@ class Forma extends React.Component {
   idGenerator = () => nanoid();
   idName = nanoid();
   idTel = nanoid();
-
+  // универсальный метод для инпутов
   onCangeInpute = event => {
     const { name, value } = event.currentTarget;
     this.setState({
       [name]: value,
     });
   };
-
+  //внутрений метод сабмита обрабатывающий событие
   formSubmit = event => {
     event.preventDefault();
     this.props.chengeSabmit(this.state);
     this.reset();
   };
-
+  // очистка формы
   reset = () => {
     this.setState({ name: '', number: '' });
   };
 
   render() {
     return (
-      <form action="" onSubmit={this.formSubmit}>
+      <form className={s.forma} action="" onSubmit={this.formSubmit}>
         <label htmlFor={this.idName}>your name</label>
         <input
           id={this.idName}

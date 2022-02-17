@@ -1,6 +1,8 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import Forma from './Forma/Forma';
+import Title from './Title/Title';
+import s from './App.module.css';
 
 class App extends React.Component {
   state = {
@@ -26,11 +28,10 @@ class App extends React.Component {
   render() {
     const { contacts } = this.state;
     return (
-      <div>
-        <div>Phonebook</div>
+      <div className={s.conteiner}>
+        <Title text={'Phonebook'} />
         <Forma chengeSabmit={this.formSubmitApp} />
-
-        <div>Contacts</div>
+        <Title text={'Contacts'} />
         <ul>
           {contacts.map(el => (
             <li key={el.id}>
