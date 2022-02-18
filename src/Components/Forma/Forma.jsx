@@ -30,8 +30,11 @@ class Forma extends React.Component {
   render() {
     return (
       <form className={s.forma} action="" onSubmit={this.formSubmit}>
-        <label htmlFor={this.idName}>your name</label>
+        <label className={s.label} htmlFor={this.idName}>
+          enter name
+        </label>
         <input
+          className={s.input}
           id={this.idName}
           type="text"
           name="name"
@@ -41,17 +44,23 @@ class Forma extends React.Component {
           onChange={this.onCangeInpute}
           value={this.state.name}
         />
-        <label htmlFor={this.idTel}>your telephone</label>
+        <label className={s.label} htmlFor={this.idTel}>
+          enter telephone
+        </label>
         <input
+          className={s.input}
           id={this.idTel}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
+          value={this.state.number}
           onChange={this.onCangeInpute}
         />
-        <button type="submit">Submit</button>
+        <button className={s.sabmitBt} type="submit">
+          Save
+        </button>
       </form>
     );
   }
