@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+// переименованн компонент форма
 import Form from './Form/Form';
 import Title from './Title/Title';
 import s from './App.module.css';
