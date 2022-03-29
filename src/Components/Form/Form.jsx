@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import s from './Forma.module.css';
 import propTypes from 'prop-types';
 
-class Forma extends React.Component {
+class Form extends React.Component {
   state = { name: '', number: '' };
 
   //генерируем необходимые ключи
@@ -66,5 +66,5 @@ class Forma extends React.Component {
     );
   }
 }
-Forma.propTypes = { chengeSabmit: propTypes.func };
-export default Forma;
+Form.propTypes = { chengeSabmit: propTypes.func };
+export default Form;

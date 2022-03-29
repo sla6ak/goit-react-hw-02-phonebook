@@ -1,6 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import Forma from './Forma/Forma';
+import Form from './Form/Form';
 import Title from './Title/Title';
 import s from './App.module.css';
 import ContactList from './ContactList/ContactList';
@@ -21,6 +21,15 @@ class App extends React.Component {
   idGenerator = () => nanoid();
   // добавляет новые контакты
   formSubmitApp = data => {
+    //Исправление №3  добавлена проверка на существование имени в списке.
+    if (
+      this.state.contacts.find(
+        el => el.name.toLowerCase().trim() === data.name.toLowerCase().trim()
+      )
+    ) {
+      alert(`${data.name} is already in contacts`);
+      return;
+    }
     this.setState(prevState => {
       return {
         contacts: [
@@ -59,7 +68,7 @@ class App extends React.Component {
     return (
       <div className={s.conteiner}>
         <Title text={'Phonebook'} />
-        <Forma chengeSabmit={this.formSubmitApp} />
+        <Form chengeSabmit={this.formSubmitApp} />
         <Title text={'Contacts'} />
 
         {contacts.length < 1 ? (

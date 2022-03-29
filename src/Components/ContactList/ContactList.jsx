@@ -1,8 +1,9 @@
 import s from './ContactList.module.css';
 import React from 'react';
 import NotContacts from 'Components/NotContacts/NotContacts';
-import { FiX } from 'react-icons/fi';
 import propTypes from 'prop-types';
+import Filter from './Filter/Filter';
+import Contact from './Contact/Contact';
 
 class ContactList extends React.Component {
   state = {};
@@ -11,21 +12,12 @@ class ContactList extends React.Component {
     const list = this.props.contacts();
     return (
       <>
-        <input
-          className={s.inputFinde}
-          type="text"
-          name="filter"
-          value={this.props.filter}
-          onChange={this.props.onFinde}
-        />
+        <Filter filter={this.props.filter} onFinde={this.props.onFinde} />
         {list.length > 0 ? (
           <ul className={s.list}>
             {list.map(el => (
               <li className={s.li} key={el.id}>
-                {el.name}: {el.numberTel}
-                <button onClick={() => this.props.deleteEl(el.id)}>
-                  <FiX className={s.svgFix} />
-                </button>
+                <Contact el={el} deleteEl={this.props.deleteEl} />
               </li>
             ))}
           </ul>
