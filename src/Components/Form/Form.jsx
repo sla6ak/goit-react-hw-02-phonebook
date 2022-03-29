@@ -1,6 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import s from './Forma.module.css';
+import s from './Form.module.css';
 import propTypes from 'prop-types';
 
 class Form extends React.Component {
@@ -30,7 +30,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form className={s.forma} action="" onSubmit={this.formSubmit}>
+      <form className={s.form} action="" onSubmit={this.formSubmit}>
         <label className={s.label} htmlFor={this.idName}>
           enter name
         </label>

@@ -2,11 +2,11 @@ import s from './Contact.module.css';
 import propTypes from 'prop-types';
 import { FiX } from 'react-icons/fi';
 
-const Contact = ({ el, deleteEl }) => {
+const Contact = ({ elem, deleteEl }) => {
   return (
     <li className={s.li}>
-      {el.name}: {el.numberTel}
-      <button onClick={() => deleteEl(el.id)}>
+      {elem.name}: {elem.numberTel}
+      <button onClick={() => deleteEl(elem.id)}>
         <FiX className={s.svgFix} />
       </button>
     </li>
@@ -15,7 +15,7 @@ const Contact = ({ el, deleteEl }) => {
 
 Contact.propTypes = {
   deleteEl: propTypes.func,
-  el: propTypes.object,
+  elem: propTypes.object,
 };
 
 export default Contact;

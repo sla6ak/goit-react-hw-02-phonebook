@@ -9,14 +9,14 @@ class ContactList extends React.Component {
   state = {};
 
   render() {
-    const list = this.props.contacts();
+    const listCont = this.props.contacts();
     return (
       <>
         <Filter filter={this.props.filter} onFinde={this.props.onFinde} />
-        {list.length > 0 ? (
+        {listCont.length > 0 ? (
           <ul className={s.list}>
-            {list.map(el => (
-              <Contact key={el.id} el={el} deleteEl={this.props.deleteEl} />
+            {listCont.map(el => (
+              <Contact key={el.id} elem={el} deleteEl={this.props.deleteEl} />
             ))}
           </ul>
         ) : (
