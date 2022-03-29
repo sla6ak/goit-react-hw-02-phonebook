@@ -16,9 +16,7 @@ class ContactList extends React.Component {
         {list.length > 0 ? (
           <ul className={s.list}>
             {list.map(el => (
-              <li className={s.li} key={el.id}>
-                <Contact el={el} deleteEl={this.props.deleteEl} />
-              </li>
+              <Contact key={el.id} el={el} deleteEl={this.props.deleteEl} />
             ))}
           </ul>
         ) : (
